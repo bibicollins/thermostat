@@ -4,10 +4,6 @@ function Thermostat() {
   this.temperature = 20;
 };
 
-Thermostat.prototype.temperature = function() {
-  this.temperature;
-}
-
 Thermostat.prototype.up = function() {
   this.temperature += 1
   return this.temperature
