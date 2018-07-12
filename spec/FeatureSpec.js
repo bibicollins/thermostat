@@ -4,21 +4,28 @@ var thermostat;
 var count;
 
 beforeEach(function() {
-    thermostat = new Thermostat;
+  thermostat = new Thermostat;
   });
 
-describe('Feature test:', () => {
-  it('The thermostat should start at 20 degrees',() => {
-    expect(thermostat.temperature).toEqual(20);
+describe('Thermostat', () => {
+  describe('.temperature', () => {
+    it('The thermostat should start at 20 degrees',() => {
+      expect(thermostat.temperature).toEqual(20);
+    });
   });
-  it('The temperature can be increased', () => {
-    thermostat.up();
-    expect(thermostat.temperature).toEqual(21);
+  describe('.up', () => {
+    it('The temperature can be increased', () => {
+      thermostat.up();
+      expect(thermostat.temperature).toEqual(21);
+    });
   });
-  it('The temperature can be decreased', () => {
-    thermostat.down();
-    expect(thermostat.temperature).toEqual(19);
+  describe('.down', () => {
+    it('The temperature can be decreased', () => {
+      thermostat.down();
+      expect(thermostat.temperature).toEqual(19);
+    });
   });
+
   describe('Minimum temperature', () => {
     it('Throws an error when the temperature is 9 or below', () => {
       for (count = 0; count < 10; count++) {
@@ -33,4 +40,9 @@ describe('Feature test:', () => {
       expect(function() {thermostat.down();}).not.toThrowError('NOOO ITS COLD');
     });
   });
+  describe('Power saving mode', () => {
+    it('Starts with power saving mode ON', () => {
+      expect(thermostat.powerSavingMode).toBe(true);
+    })
+  })
 });
