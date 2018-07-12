@@ -5,6 +5,10 @@ function Thermostat() {
   this.maxTemperature = 25;
 };
 
+Thermostat.prototype.getCurrentTemperature = function() {
+  return this.temperature;
+}
+
 Thermostat.prototype.up = function() {
   if (this.temperature < this.maxTemperature) {
     this.temperature += 1

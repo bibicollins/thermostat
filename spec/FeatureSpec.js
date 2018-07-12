@@ -11,7 +11,7 @@ describe('Thermostat', () => {
 
   describe('.temperature', () => {
     it('The thermostat should start at 20 degrees',() => {
-      expect(thermostat.temperature).toEqual(20);
+      expect(thermostat.getCurrentTemperature()).toEqual(20);
     });
     it('The thermostat should start with a Max temp of 25 degrees',() => {
       expect(thermostat.maxTemperature).toEqual(25);
@@ -21,7 +21,7 @@ describe('Thermostat', () => {
   describe('.up', () => {
     it('The temperature can be increased', () => {
       thermostat.up();
-      expect(thermostat.temperature).toEqual(21);
+      expect(thermostat.getCurrentTemperature()).toEqual(21);
     });
     describe('when power save is on', () => {
       it('Throws an error when the temperature is greater than the max', () => {
@@ -45,7 +45,7 @@ describe('Thermostat', () => {
   describe('.down', () => {
     it('The temperature can be decreased', () => {
       thermostat.down();
-      expect(thermostat.temperature).toEqual(19);
+      expect(thermostat.getCurrentTemperature()).toEqual(19);
     });
     it('Throws an error when the temperature is 9 or below', () => {
       for (count = 0; count < 10; count++) {
@@ -80,7 +80,7 @@ describe('Thermostat', () => {
     it('Resets the temperature to 20 degrees', () => {
       thermostat.up();
       thermostat.reset();
-      expect(thermostat.temperature).toEqual(20);
+      expect(thermostat.getCurrentTemperature()).toEqual(20);
     });
   });
 
