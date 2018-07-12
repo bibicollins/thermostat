@@ -76,11 +76,29 @@ describe('Thermostat', () => {
     });
   });
 
+  describe('.reset', () => {
+    it('Resets the temperature to 20 degrees', () => {
+      thermostat.up();
+      thermostat.reset();
+      expect(thermostat.temperature).toEqual(20);
+    });
+  });
 
-  // describe('.powerSaveOff', () => {
-  //   it('Changes the maximum temperature to 32 de', () => {
-  //
-  //   })
-  //
-  // })
+  describe('.currentEnergyUsage', () => {
+    it('returns low-usage when < 18 degrees', () => {
+      for (count = 0; count < 3; count ++) {
+        thermostat.down();
+      }
+        expect(thermostat.currentEnergyUsage()).toEqual('low-usage');
+    })
+    it('returns medium-usage when < 25 degrees', () => {
+        expect(thermostat.currentEnergyUsage()).toEqual('medium-usage');
+    })
+    it('returns high-usage when >= 25 degrees', () => {
+      for (count = 0; count < 5; count ++) {
+        thermostat.up();
+      }
+        expect(thermostat.currentEnergyUsage()).toEqual('high-usage');
+    })
+  })
 });
