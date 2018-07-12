@@ -6,8 +6,12 @@ function Thermostat() {
 };
 
 Thermostat.prototype.up = function() {
-  this.temperature += 1
-  return this.temperature
+  if (this.temperature < this.maxTemperature) {
+    this.temperature += 1
+    return this.temperature
+  } else {
+    throw new Error ("Ow it's hot");
+  }
 };
 
 Thermostat.prototype.down = function() {

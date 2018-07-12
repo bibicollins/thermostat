@@ -23,8 +23,22 @@ describe('Thermostat', () => {
       thermostat.up();
       expect(thermostat.temperature).toEqual(21);
     });
-    it('Throws an error when the temperature is greater than the max', () => {
-
+    describe('when power save is on', () => {
+      it('Throws an error when the temperature is greater than the max', () => {
+        for (count = 0; count < 5; count++) {
+          thermostat.up();
+        }
+        expect(function() {thermostat.up();}).toThrowError("Ow it's hot");
+      })
+    })
+    describe('when power save is off', () => {
+      it('Throws an error when the temperature is greater than the max', () => {
+        thermostat.powerSaveOff();
+        for (count = 0; count < 12; count++) {
+          thermostat.up();
+        }
+        expect(function() {thermostat.up();}).toThrowError("Ow it's hot");
+      })
     })
   });
 
