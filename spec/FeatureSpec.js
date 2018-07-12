@@ -12,6 +12,9 @@ describe('Thermostat', () => {
     it('The thermostat should start at 20 degrees',() => {
       expect(thermostat.temperature).toEqual(20);
     });
+    it('The thermostat should start with a Max temp of 25 degrees',() => {
+      expect(thermostat.maxTemperature).toEqual(25);
+    });
   });
   describe('.up', () => {
     it('The temperature can be increased', () => {
@@ -24,9 +27,6 @@ describe('Thermostat', () => {
       thermostat.down();
       expect(thermostat.temperature).toEqual(19);
     });
-  });
-
-  describe('Minimum temperature', () => {
     it('Throws an error when the temperature is 9 or below', () => {
       for (count = 0; count < 10; count++) {
         thermostat.down();
@@ -40,9 +40,14 @@ describe('Thermostat', () => {
       expect(function() {thermostat.down();}).not.toThrowError('NOOO ITS COLD');
     });
   });
-  describe('Power saving mode', () => {
-    it('Starts with power saving mode ON', () => {
-      expect(thermostat.powerSavingMode).toBe(true);
-    })
-  })
+
+  
+
+
+  // describe('.powerSaveOff', () => {
+  //   it('Changes the maximum temperature to 32 de', () => {
+  //
+  //   })
+  //
+  // })
 });
