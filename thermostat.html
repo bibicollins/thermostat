@@ -1,32 +1,23 @@
 <!DOCTYPE html>
   <html>
+
     <head>
       <meta charset="utf-8">
       <title>Thermostat</title>
-
       <link rel="stylesheet" href="public/thermostat.css">
-
-      <!-- include source files here... -->
       <script src="src/Thermostat.js"></script>
-
+      <script src="src/jquery-3.3.1.js"></script>
+      <script src="src/controller.js"></script>
     </head>
 
     <body>
-
-      <button type="button" onclick="Thermostat.prototype.up()">+</button>
-      <button type="button" onclick="Thermostat.prototype.down()">-</button>
-      <button type="button" onclick="Thermostat.prototype.reset()">Reset</button>
-      <button type="button" onclick="Thermostat.prototype.powerSaveOn()">Power Save On</button>
-      <button type="button" onclick="Thermostat.prototype.powerSaveOff()">Power Save Off</button>
-      <h1>20 degrees</h1>
-      <h3>low-usage</h3>
-
-
-
+      <button id="plus" type="button">+</button>
+      <button id="minus" type="button">-</button>
+      <button id="reset" type="button">Reset</button>
+      <button id="ps_on" type="button">Power Save On</button>
+      <button id="ps_off" type="button">Power Save Off</button>
+      <h1 id="current_temp"></h1>
+      <h3 id="usage"></h3>
     </body>
-
-
-
-
 
   </html>
