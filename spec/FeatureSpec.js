@@ -1,23 +1,36 @@
 'use strict';
 
+var thermostat;
+var count;
+
+beforeEach(function() {
+    thermostat = new Thermostat;
+  });
+
 describe('Feature test:', () => {
-  it('should start at 20 degrees',() => {
-    var thermostat = new Thermostat;
+  it('The thermostat should start at 20 degrees',() => {
     expect(thermostat.temperature).toEqual(20);
   });
   it('The temperature can be increased', () => {
-    var thermostat = new Thermostat;
     thermostat.up();
     expect(thermostat.temperature).toEqual(21);
-  })
+  });
   it('The temperature can be decreased', () => {
-    var thermostat = new Thermostat;
     thermostat.down();
     expect(thermostat.temperature).toEqual(19);
-  })
-  it('Has a minimum temperature of 10 degrees', () => {
-    var thermostat = new Thermostat;
-    spyOn(thermostat, 'temperature').and.returnValue(9)
-    expect(function() {thermostat.down();}).toThrowError('NOOO ITS COLD');
-  })
+  });
+  describe('Minimum temperature', () => {
+    it('Throws an error when the temperature is 9 or below', () => {
+      for (count = 0; count < 10; count++) {
+        thermostat.down();
+      }
+      expect(function() {thermostat.down();}).toThrowError('NOOO ITS COLD');
+    });
+    it('Does not throw an error when the temperature is 10 or above', () => {
+      for (count = 0; count < 9; count++) {
+        thermostat.down();
+      }
+      expect(function() {thermostat.down();}).not.toThrowError('NOOO ITS COLD');
+    });
+  });
 });

@@ -1,7 +1,7 @@
 'use strict';
 
 function Thermostat() {
-this.temperature = 20;
+  this.temperature = 20;
 };
 
 Thermostat.prototype.temperature = function() {
@@ -14,9 +14,9 @@ Thermostat.prototype.up = function() {
 };
 
 Thermostat.prototype.down = function() {
-  if (this.temperature >= 10) {
-    this.temperature -= 1
-} else {
-  throw new Error ('NOOO ITS COLD')
-}
+  if (this.temperature > 10) {
+    return this.temperature -= 1
+  } else {
+    throw new Error ('NOOO ITS COLD')
+  }
 };
