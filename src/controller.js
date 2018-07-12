@@ -15,6 +15,16 @@ $( document ).ready(function() {
     $("#current_temp").text(thermostat.getCurrentTemperature());
     $("#usage").text(thermostat.currentEnergyUsage());
   });
+  $("#reset").click(function() {
+    thermostat.reset();
+    $("#current_temp").text(thermostat.getCurrentTemperature());
+  })
+  $("#ps_off").click(function() {
+    thermostat.powerSaveOff();
+  })
+  $("#ps_on").click(function() {
+    thermostat.powerSaveOn();
+  })
 
 
 
