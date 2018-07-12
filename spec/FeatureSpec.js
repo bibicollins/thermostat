@@ -23,6 +23,9 @@ describe('Thermostat', () => {
       thermostat.up();
       expect(thermostat.temperature).toEqual(21);
     });
+    it('Throws an error when the temperature is greater than the max', () => {
+
+    })
   });
 
   describe('.down', () => {
