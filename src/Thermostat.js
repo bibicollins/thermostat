@@ -17,3 +17,11 @@ Thermostat.prototype.down = function() {
     throw new Error ('NOOO ITS COLD')
   }
 };
+
+Thermostat.prototype.powerSaveOff = function() {
+  this.maxTemperature = 32;
+}
+
+Thermostat.prototype.powerSaveOn = function() {
+  this.maxTemperature = 25;
+}

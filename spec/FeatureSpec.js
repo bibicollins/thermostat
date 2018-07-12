@@ -8,6 +8,7 @@ beforeEach(function() {
   });
 
 describe('Thermostat', () => {
+
   describe('.temperature', () => {
     it('The thermostat should start at 20 degrees',() => {
       expect(thermostat.temperature).toEqual(20);
@@ -16,12 +17,14 @@ describe('Thermostat', () => {
       expect(thermostat.maxTemperature).toEqual(25);
     });
   });
+
   describe('.up', () => {
     it('The temperature can be increased', () => {
       thermostat.up();
       expect(thermostat.temperature).toEqual(21);
     });
   });
+
   describe('.down', () => {
     it('The temperature can be decreased', () => {
       thermostat.down();
@@ -41,7 +44,20 @@ describe('Thermostat', () => {
     });
   });
 
-  
+  describe('.powerSaveOff', () => {
+    it('Sets the max temp to 32', () => {
+      thermostat.powerSaveOff();
+      expect(thermostat.maxTemperature).toEqual(32);
+    });
+  });
+
+  describe('.powerSaveOn', () => {
+    it('Sets the max temp to 25', () => {
+      thermostat.powerSaveOff();
+      thermostat.powerSaveOn();
+      expect(thermostat.maxTemperature).toEqual(25);
+    });
+  });
 
 
   // describe('.powerSaveOff', () => {
