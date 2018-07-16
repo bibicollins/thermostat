@@ -36,6 +36,10 @@ $( document ).ready(function() {
   })
 })
 
+
+
+});
+
   // $(document).ready(function(){
   // $.ajax({
   //   url: "http://api.openweathermap.org/data/2.5/weather?APPID=YOUR_API_KEY&id=&units=imperial",
@@ -54,7 +58,3 @@ $( document ).ready(function() {
   // $("#reset").click(thermostat.reset())
   // $("#ps_on").click(thermostat.powerSaveOn())
   // $("#ps_off").click(thermostat.powerSaveOff())
-
-
-
-});

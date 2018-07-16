@@ -1,0 +1,20 @@
+/* .low-usage {
+  color: green;
+}
+
+.medium-usage {
+  color: orange;
+}
+
+.high-usage {
+  color: red;
+
+} */
+
+.fancy {
+  width: 500px;
+  margin: 20 auto;
+  padding: 45px;
+  border: solid blue 10px;
+
+}
