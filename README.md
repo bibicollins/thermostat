@@ -1,5 +1,5 @@
 # Thermostat
-intro here
+![Usage example](/lib/Thermostat-screen-grab.gif)
 
 ## Getting started
 ## Usage
