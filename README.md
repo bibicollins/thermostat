@@ -8,7 +8,7 @@ Enter the following commands in your terminal:
 - Clone the repository and change into the directory: `git clone https://github.com/bibicollins/thermostat.git && cd thermostat`
 ## Usage
 To use the thermostat type `open thermostat.html` and have a go! 
-## Requirements/User stories
+## Requirements
 Thermostat starts at 20 degrees
 You can increase the temperature with an up function
 You can decrease the temperature with a down function
@@ -22,4 +22,5 @@ You can ask about the thermostat's current energy usage: < 18 is low-usage, < 25
 - Tested using Jasmine
 - To see the full test suite enter `open SpecRunner.html` in your terminal from the root of the project.
 ![Tests](https://imgur.com/YSlHiW5.png)
+
 
